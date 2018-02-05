@@ -7,4 +7,8 @@ app.get('/hello', (req, res)=>{
   res.send("hello typescript world");
 })
 
+app.get('/goodbye', (req, res)=>{
+  res.send("goodbye typescript world");
+})
+
 export const hello: Handler = serverless(app);
