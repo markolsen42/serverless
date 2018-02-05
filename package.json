@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "0.0.22",
+    "@types/express": "^4.11.1",
     "@types/node": "^8.0.57",
     "serverless-offline": "^3.16.0",
     "serverless-webpack": "^4.0.0",
@@ -19,7 +20,6 @@
   "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
   "license": "MIT",
   "dependencies": {
-    "@types/express": "^4.11.1",
     "express": "^4.16.2",
     "serverless-http": "^1.5.3"
   }

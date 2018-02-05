@@ -11,4 +11,4 @@ app.get('/goodbye', (req, res)=>{
   res.send("goodbye typescript world");
 })
 
-export const hello: Handler = serverless(app);
+export const api: Handler = serverless(app);
