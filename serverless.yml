@@ -13,7 +13,6 @@ functions:
   hello:
     handler: handler.hello
     events:
-      - http:
-          method: get
-          path: hello
+      - http: ANY /
+      - http: 'ANY {proxy+}'
 
