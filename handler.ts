@@ -18,14 +18,15 @@ app.get('/goodbye', (req, res)=>{
   res.send("goodbye typescript world");
 })
 
-app.get("/write", (req, res) => {
-  console.log(JSON.stringify(process.env))
+app.get("/write/:id/:text", (req, res) => {
+  console.log(req.params.id);
+  console.log(req.params.text);
   const params = {
     TableName: process.env.DYNAMODB_TABLE,
    // TableName: process.env.DYNAMODB_TABLE,
     Item: {
-      id: "123" + Math.random(),
-      text: "4 score ...",
+      id: req.params.id,
+      text: req.params.text,
       checked: false,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
@@ -43,7 +44,8 @@ app.get("/write", (req, res) => {
 })
 
 app.get("/read/:id", (req, res) => {
-  let id = '123';
+  console.log(req.params.id);
+  let id = ""+req.params.id;
   const params = {
     ExpressionAttributeNames: {
         "#id": "id",
