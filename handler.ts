@@ -4,6 +4,7 @@ import express = require('express')
 import util = require('util');
 import AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
 import {DocumentClient} from "aws-sdk/lib/dynamodb/document_client";
+import {Config} from "./config";
 
 AWS.config.update({region: "us-east-1"});
 const dynamoDb: DocumentClient = new AWS.DynamoDB.DocumentClient();
@@ -41,6 +42,12 @@ app.get("/write/:id/:text", (req, res) => {
   }
   })
   
+})
+
+app.get("/writepg/:id/:text", (req, res) => {
+  let config = new Config();
+  console.log(config.values)
+  //now have a look at sequelise
 })
 
 app.get("/read/:id", (req, res) => {
